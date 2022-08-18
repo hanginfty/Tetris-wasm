@@ -17,11 +17,11 @@ pub struct Tetris {
 }
 
 impl Tetris {
-    pub fn new(width: i32, height: i32) -> Self {
+    pub fn new(width: u32, height: u32) -> Self {
         Self {
-            width,
-            height,
-            curr_block: &Block::new_rand() + Pos(width / 2, 0),
+            width: width as i32,
+            height: height as i32,
+            curr_block: &Block::new_rand() + Pos(width as i32 / 2, 0),
             fixed_block: vec![],
             is_lost: false,
         }
